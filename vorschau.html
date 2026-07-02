@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="robots" content="noindex, nofollow">
+<title>Deine neue Seite — eine Vorschau von Lechcode</title>
+<meta name="description" content="Hallo Joshua — hier ist ein erster Entwurf deiner neuen Website. Schau selbst.">
+<meta property="og:title" content="Joshua — deine neue Seite ist da">
+<meta property="og:description" content="Ein erster Entwurf deiner neuen Website. Klar, schnell, cookiefrei. Schau selbst.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://lechcode.github.io/joshua-rudisch-vorschau/vorschau.html">
+<meta property="og:image" content="https://lechcode.github.io/joshua-rudisch-vorschau/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#16181B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='11' fill='%230E6B62'/%3E%3Ctext x='24' y='34' font-family='Space Grotesk,Arial' font-size='27' font-weight='700' fill='%23F4F4F1' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.v-intro{padding:clamp(80px,12vw,140px) 0 clamp(40px,6vw,70px);text-align:center}
+.v-intro .eyebrow{justify-content:center}
+.v-intro h1{font-size:var(--step-4);margin:18px auto 0;max-width:16ch}
+.v-intro h1 em{font-style:normal;color:var(--petrol)}
+.v-intro p{color:var(--ink-soft);font-size:var(--step-1);max-width:52ch;margin:20px auto 0;line-height:1.5}
+.center-head{text-align:center;max-width:60ch;margin:0 auto}
+.center-head h2{font-size:var(--step-3)}
+.center-head p{color:var(--ink-soft);font-size:var(--step-1);margin-top:12px}
+
+/* Vergleich */
+.cmp{position:relative;max-width:1000px;margin:38px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -34px rgba(14,107,98,.6);aspect-ratio:1120/700;touch-action:pan-y;user-select:none;background:var(--ink)}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cmp-top{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+.cmp-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);z-index:3;cursor:ew-resize}
+.cmp-handle .knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.cmp-lab{position:absolute;top:14px;z-index:2;font-family:var(--display);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;color:#fff}
+.cmp-lab.l{left:14px;background:rgba(20,22,26,.7)}
+.cmp-lab.r{right:14px;background:var(--petrol)}
+
+/* Phones */
+.phones{display:flex;gap:clamp(18px,4vw,44px);justify-content:center;flex-wrap:wrap;margin-top:40px}
+.phone{width:230px;max-width:44vw}
+.phone .screen{position:relative;border:9px solid #16181B;border-radius:34px;overflow:hidden;aspect-ratio:480/864;background:#000;box-shadow:0 24px 50px -28px rgba(0,0,0,.5)}
+.phone .screen::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:74px;height:19px;background:#16181B;border-radius:0 0 12px 12px;z-index:2}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.phone .cap{text-align:center;margin-top:14px;font-family:var(--display);font-weight:500;font-size:.82rem}
+.phone .cap.alt{color:var(--muted)}
+.phone .cap.neu{color:var(--petrol)}
+.mob-stat{text-align:center;color:var(--muted);font-size:var(--step--1);max-width:52ch;margin:26px auto 0}
+
+/* Fixes */
+.fixes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
+.fix{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;gap:14px}
+.fix .ic{flex:none;width:34px;height:34px;border-radius:9px;background:var(--petrol-soft);color:var(--petrol-deep);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.fix b{font-family:var(--display);display:block;margin-bottom:4px}
+.fix p{color:var(--ink-soft);font-size:var(--step--1)}
+
+/* Angebot */
+.deal{background:var(--ink);color:#EDEDEA;border-radius:var(--radius);padding:clamp(30px,5vw,52px);text-align:center;margin-top:38px}
+.deal .price{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);color:#fff;line-height:1}
+.deal .price small{display:block;font-size:1rem;color:#7FD8CC;font-weight:500;margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase}
+.deal p{color:#B4B8BC;max-width:46ch;margin:16px auto 0}
+.deal-steps{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.deal-step{background:rgba(255,255,255,.06);border-radius:12px;padding:14px 18px;font-size:var(--step--1);color:#D6D9DC;max-width:200px}
+.deal-step b{display:block;color:#fff;font-family:var(--display);font-weight:500;margin-bottom:3px}
+
+/* offene Fragen */
+.needs{margin-top:36px;display:grid;gap:12px;max-width:760px}
+.need{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--petrol);border-radius:0 12px 12px 0;padding:16px 20px;color:var(--ink-soft);font-size:var(--step-0)}
+.need b{color:var(--ink);font-family:var(--display);font-weight:500}
+
+/* Lechcode Buchungsband */
+.lcbook{background:#16130c;color:#f3ead9;border-radius:20px;padding:clamp(30px,5vw,50px);text-align:center;margin:56px auto 0;max-width:900px;font-family:var(--sans);position:relative;overflow:hidden}
+.lcbook h3{font-family:var(--display);color:#fff;font-size:var(--step-2);margin-bottom:12px}
+.lcbook p{color:#cdbfa6;max-width:44ch;margin:0 auto 22px;font-size:var(--step-0)}
+.lcbook-btn{display:inline-flex;align-items:center;gap:9px;background:#e8923f;color:#1a1206;font-family:var(--display);font-weight:700;padding:15px 26px;border-radius:100px;font-size:var(--step-0)}
+.lcbook-btn:hover{background:#e7b964}
+.lcbook .wave{height:8px;background:linear-gradient(90deg,#e8923f,#e7b964,#e8923f);border-radius:6px;max-width:120px;margin:0 auto 20px;opacity:.9}
+.lcbook .hint{margin-top:14px;color:#8f8874;font-size:.78rem}
+.v-foot{text-align:center;padding:50px 0;color:var(--muted);font-size:var(--step--1)}
+.v-foot a{color:var(--petrol)}
+@media(max-width:720px){.fixes{grid-template-columns:1fr}.cmp-handle .knob{width:40px;height:40px}}
+</style>
+</head>
+<body>
+<main id="main">
+
+<section class="v-intro">
+  <div class="wrap">
+    <span class="eyebrow">Eine Vorschau von Lechcode</span>
+    <h1>Hallo Joshua — deine neue Seite ist <em>da</em>.</h1>
+    <p>Schön, dass du dich gemeldet hast. Wir haben einen ersten Entwurf gebaut — klarer, professioneller, mehrseitig. Zieh am Regler, wirf einen Blick aufs Handy, und schau, ob du dich darin wiederfindest.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow" style="justify-content:center">Vorher / Nachher</span>
+      <h2 style="margin-top:14px">Zieh den Regler.</h2>
+      <p>Links deine bisherige Seite, rechts der neue Entwurf.</p>
+    </div>
+    <div class="cmp" id="cmp">
+      <img class="base" src="assets/vorschau-assets/slider-neu.jpg" alt="Neue Seite" draggable="false">
+      <div class="cmp-top" id="cmpTop"><img src="assets/vorschau-assets/slider-alt.jpg" alt="Bisherige Seite" draggable="false"></div>
+      <span class="cmp-lab l">Vorher</span>
+      <span class="cmp-lab r">Nachher</span>
+      <div class="cmp-handle" id="cmpHandle"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E6B62" stroke-width="2.4"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow" style="justify-content:center">Am Handy</span>
+      <h2 style="margin-top:14px">So sehen dich Menschen unterwegs.</h2>
+    </div>
+    <div class="phones reveal">
+      <div class="phone"><div class="screen"><img src="assets/vorschau-assets/phone-alt.jpg" alt="Bisherige Seite mobil"></div><div class="cap alt">Bisher</div></div>
+      <div class="phone"><div class="screen"><img src="assets/vorschau-assets/phone-neu.jpg" alt="Neue Seite mobil"></div><div class="cap neu">Neu</div></div>
+    </div>
+    <p class="mob-stat reveal">Über 60 % aller Website-Besuche kommen heute vom Smartphone — genau dort entscheidet sich der erste Eindruck.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow" style="justify-content:center">Das haben wir gleich mitgelöst</span>
+      <h2 style="margin-top:14px">Ein paar Dinge sind uns aufgefallen.</h2>
+    </div>
+    <div class="fixes">
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Text war schwer lesbar</b><p>Auf der alten Seite lag die Botschaft direkt auf dem Bühnenfoto. Jetzt steht sie klar für sich — Foto daneben, nichts überlagert.</p></div></div>
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Testimonials waren leer</b><p>Die Bewertungs-Sektion war nie fertig geworden. Jetzt gibt es einen fertigen Platz für echte Stimmen (auch Trustpilot, cookiefrei gelöst).</p></div></div>
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Kein Impressum</b><p>Rechtlich riskant. Zum Livegang schließen wir diese Lücke sauber (§ 5 DDG) — mit dabei.</p></div></div>
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Cookie-Banner &amp; externe Dienste</b><p>Die alte Seite lud Cookies und das Calendly-Fenster extern nach. Die neue ist cookiefrei — kein Banner nötig, keine Tracker.</p></div></div>
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Nur eine Seite</b><p>Aus einer einzelnen Landingpage wird eine klare Struktur: Coaching im Fokus, Projekte &amp; Teams als eigene Seiten.</p></div></div>
+      <div class="fix reveal"><span class="ic">✓</span><div><b>Klarer Weg zum Termin</b><p>Ein deutlicher, wiederkehrender Weg zu dir: „Kostenloses Kennenlernen" — im Kopf, in der Mitte, im Footer.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow" style="justify-content:center">Was das für dich heißt</span>
+      <h2 style="margin-top:14px">Unser Startangebot.</h2>
+    </div>
+    <div class="deal reveal">
+      <div class="price"><small>Die ersten 10 Websites</small>500 €<span style="font-size:1.4rem"> einmalig</span></div>
+      <p>Komplett inklusive Umzug deiner Domain. Pflege danach 19 € / Monat, monatlich kündbar. Keine Agentur-Preise, kein Abo-Zwang.</p>
+      <div class="deal-steps">
+        <div class="deal-step"><b>1 · Entwurf</b>Steht (den siehst du gerade)</div>
+        <div class="deal-step"><b>2 · Gespräch</b>30 Min mit Michael, in Ruhe</div>
+        <div class="deal-step"><b>3 · Finale Version</b>binnen 24 h nach dem Gespräch</div>
+      </div>
+      <div style="margin-top:30px"><a href="index.html" class="btn btn-primary" style="background:var(--petrol);color:#EAF6F3">Deine neue Seite ansehen <span class="ar">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow" style="justify-content:center">Was wir noch von dir brauchen</span>
+      <h2 style="margin-top:14px">Ein paar Dinge fehlen uns noch.</h2>
+    </div>
+    <div class="needs">
+      <div class="need reveal"><b>Deine Bewertungen / Testimonials</b> — 3–5 echte Stimmen mit Namen, oder dein Trustpilot-Profil zum Verlinken.</div>
+      <div class="need reveal"><b>Impressums-Angaben</b> — ladungsfähige Anschrift, Telefon, ggf. USt-IdNr.</div>
+      <div class="need reveal"><b>Aktuelle Angebote &amp; Preise</b> — was bietest du gerade an, und in welchem Rahmen?</div>
+      <div class="need reveal"><b>Deine Projekte</b> — welche „anderen Themen" sollen eigene Seiten bekommen (Teams, PFT, Schreiben …)?</div>
+      <div class="need reveal"><b>Foto &amp; Rechte</b> — dürfen wir dein Porträt nutzen? Wer hat es gemacht? Gern auch weitere Fotos.</div>
+      <div class="need reveal"><b>Dein Terminlink</b> — der genaue Calendly-Link, den wir hinterlegen sollen.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="lcbook reveal">
+    <div class="wave"></div>
+    <h3>Lust auf ein kurzes Gespräch, Joshua?</h3>
+    <p>Ca. 30 Minuten, unverbindlich. Wir gehen gemeinsam durch die Seite und deine Wünsche.</p>
+    <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1vusFYCV6O45i109a0J5ruEFtWCT7iFsq5t4Mb2KvQmNhdkMtlddml9dx5V2jButjV2SUGapFg?gv=true" target="_blank" rel="noopener noreferrer" class="lcbook-btn">Termin aussuchen →</a>
+    <div class="hint">öffnet unseren Kalender in neuem Tab — Seite bleibt cookiefrei</div>
+  </div>
+</div>
+
+<div class="v-foot">
+  Unverbindliche Design-Vorschau — erstellt von Lechcode, Landsberg am Lech.<br>
+  Fragen? <a href="mailto:info@lechcode.de">info@lechcode.de</a>
+</div>
+</main>
+
+<script>
+(function(){
+  var cmp=document.getElementById('cmp'),top=document.getElementById('cmpTop'),h=document.getElementById('cmpHandle');
+  if(cmp){
+    var set=function(p){p=Math.max(0,Math.min(100,p));top.style.clipPath='inset(0 '+(100-p)+'% 0 0)';h.style.left=p+'%';};
+    var drag=false;
+    var move=function(x){var r=cmp.getBoundingClientRect();set((x-r.left)/r.width*100);};
+    cmp.addEventListener('pointerdown',function(e){drag=true;try{cmp.setPointerCapture(e.pointerId)}catch(_){}move(e.clientX);});
+    cmp.addEventListener('pointermove',function(e){if(drag)move(e.clientX);});
+    cmp.addEventListener('pointerup',function(){drag=false;});
+    cmp.addEventListener('pointercancel',function(){drag=false;});
+    set(50);
+  }
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');var show=function(e){e.classList.add('in')};
+  if(reduce){els.forEach(show);}else if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){show(x.target);io.unobserve(x.target)}})},{threshold:0,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+    var fb=function(){els.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)show(e)})};
+    window.addEventListener('scroll',fb,{passive:true});fb();setTimeout(function(){els.forEach(show)},2600);
+  }else{els.forEach(show)}
+})();
+</script>
+</body>
+</html>
