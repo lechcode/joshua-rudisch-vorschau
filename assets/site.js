@@ -13,6 +13,16 @@
       mmenu.classList.remove('open');burger.setAttribute('aria-expanded',false);document.body.style.overflow='';
     })});
   }
+  var tpTrack=document.getElementById('tpTrack');
+  if(tpTrack){
+    document.querySelectorAll('.tp-nav button[data-tp]').forEach(function(b){
+      b.addEventListener('click',function(){
+        var card=tpTrack.querySelector('.tcard');
+        var step=(card?card.offsetWidth+22:400)*parseInt(b.getAttribute('data-tp'),10);
+        tpTrack.scrollBy({left:step,behavior:'smooth'});
+      });
+    });
+  }
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var els=document.querySelectorAll('.reveal');
   var show=function(e){e.classList.add('in')};
