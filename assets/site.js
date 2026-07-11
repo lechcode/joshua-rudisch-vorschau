@@ -3,15 +3,16 @@
   if(nav){var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>20)};onScroll();window.addEventListener('scroll',onScroll,{passive:true});}
   var burger=document.getElementById('burger'), mmenu=document.getElementById('mmenu');
   if(burger&&mmenu){
+    var menuZu=function(){mmenu.classList.remove('open');burger.setAttribute('aria-expanded',false);burger.setAttribute('aria-label','Menü öffnen');document.body.style.overflow='';};
     burger.addEventListener('click',function(){
       var open=mmenu.classList.toggle('open');
       burger.setAttribute('aria-expanded',open);
       burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
       document.body.style.overflow=open?'hidden':'';
     });
-    mmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
-      mmenu.classList.remove('open');burger.setAttribute('aria-expanded',false);document.body.style.overflow='';
-    })});
+    mmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',menuZu)});
+    // Sicherheitsnetz: bei jeder Anker-Navigation Menü schließen (auch wenn ein anderer Nav-Link geklickt wird)
+    window.addEventListener('hashchange',menuZu);
   }
   var tpTrack=document.getElementById('tpTrack');
   if(tpTrack){

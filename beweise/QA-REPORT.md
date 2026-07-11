@@ -1,0 +1,32 @@
+# QA-Report: joshua-rudisch
+
+**Gesamtampel: 🟡 GELB** · 0 rot / 10 gelb / 7 grün · 11.07.2026 11:28 · Dauer 42 s · lc-qa.py
+
+## 5-Minuten-Abnahme (Mensch)
+1. Alle 🔴 unten abgearbeitet? 2. Screenshots in `qa-shots/` überflogen — „würde ich das verschicken?"
+3. ROT-Assets in ASSETS-LIZENZEN.md ok für Vorschau? 4. MAIL-KUNDE/VERSAND-NACHRICHT gelesen? 5. Link einmal am eigenen Handy antippen.
+
+## 🔴 ROT (Blocker)
+- —
+
+## 🟡 GELB (prüfen/dokumentieren)
+- **OG-Tags datenschutz.html**: fehlt: og:title, og:description, og:image
+- **OG-Tags impressum.html**: fehlt: og:title, og:description, og:image
+- **OG-Tags mein-bereich.html**: fehlt: og:title, og:description, og:image
+- **OG-Tags onboarding.html**: fehlt: og:title, og:description, og:image
+- **img ohne width/height vorschau.html**: slider-neu.jpg, slider-alt.jpg, phone-alt.jpg, phone-neu.jpg
+- **impressum.html nicht verlinkt von**: datenschutz.html, mein-bereich.html, onboarding.html
+- **datenschutz.html nicht verlinkt von**: impressum.html, mein-bereich.html, onboarding.html
+- **ASSETS-LIZENZEN.md fehlt**: ab v2.0 Pflicht — Altprojekt? Foto-Rechte-Ampel nachziehen
+- **Lighthouse**: Lauf fehlgeschlagen: s/lennyschoenbach/Documents/Projekte/ki-agentur/landsberg-web-agentur/pipeline/bin/qa-tools/node_modules/lighthouse/core/computed/trace-engine-result.js:254:7)
+
+- **iOS-Zoom mein-bereich.html**: 5 Eingabefeld(er) mit font-size < 16px
+
+## 🟢 GRÜN
+- **Interne Links & Assets**: alle Verweise in 8 Seiten existieren
+- **Externe Requests**: keine (cookiefrei/0 Tracker bestätigt)
+- **OG-Tags**: index/vorschau vollständig
+- **Grep-Fallen & noindex**: clamp/calc sauber, noindex gesetzt
+- **Bild-Budget**: kein Einzelbild > 250 KB
+- **Burger-Menü index.html**: öffnet, navigiert, schließt
+- **Playwright-Screenshots**: 8 Seiten × 3 Breiten → qa-shots/
