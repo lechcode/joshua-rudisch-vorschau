@@ -1,6 +1,6 @@
 # QA-Report: joshua-rudisch
 
-**Gesamtampel: 🟡 GELB** · 0 rot / 10 gelb / 7 grün · 11.07.2026 17:30 · Dauer 42 s · lc-qa.py
+**Gesamtampel: 🟡 GELB** · 0 rot / 10 gelb / 7 grün · 12.07.2026 01:34 · Dauer 43 s · lc-qa.py
 
 ## 5-Minuten-Abnahme (Mensch)
 1. Alle 🔴 unten abgearbeitet? 2. Screenshots in `qa-shots/` überflogen — „würde ich das verschicken?"
