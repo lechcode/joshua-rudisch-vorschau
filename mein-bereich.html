@@ -524,13 +524,24 @@
     };
   }
 
+  // Leichte, sichere Formatierung für Berater-Nachrichten: erst HTML escapen,
+  // dann **fett**, Aufzählungszeichen und Zeilenumbrüche rendern (kein rohes HTML).
+  function escHtml(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function kiMd(s){
+    var t = escHtml(s);
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/^\s*[-•]\s+/gm, "• ");
+    t = t.replace(/\n/g, "<br>");
+    return t;
+  }
   function bubble(rolle, text){
     var el = document.createElement("div");
     el.className = "msg " + (rolle === "user" ? "du" : "ki");
-    el.textContent = text;
     if (rolle === "user"){
+      el.textContent = text;
       verlauf.appendChild(el);
     } else {
+      el.innerHTML = kiMd(text);
       // KI-Nachricht mit kleinem Berater-Avatar (Lechcode-Welle)
       var row = document.createElement("div"); row.className = "msg-row";
       var av = document.createElement("div"); av.className = "msg-avatar";
@@ -566,7 +577,7 @@
               var ev = JSON.parse(zeilen[i].slice(5).trim());
               if (ev.delta){
                 if (!antwortEl){ tipp.classList.remove("an"); antwortEl = bubble("assistant", ""); }
-                antwortText += ev.delta; antwortEl.textContent = antwortText;
+                antwortText += ev.delta; antwortEl.innerHTML = kiMd(antwortText);
                 verlauf.scrollTop = verlauf.scrollHeight;
               }
             } catch(e){}
