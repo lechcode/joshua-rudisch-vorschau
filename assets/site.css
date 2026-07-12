@@ -192,7 +192,6 @@ form input::placeholder,form textarea::placeholder{color:#7A8085}
 .foot-col a:hover{color:#fff}
 .foot-bot{margin-top:40px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:#6A7075}
 .foot-bot .made{color:#7FD8CC}
-.foot-note{margin-top:14px;text-align:center;font-size:.75rem;letter-spacing:.04em;color:#585D62}
 
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
 .js .reveal.in{opacity:1;transform:none}
