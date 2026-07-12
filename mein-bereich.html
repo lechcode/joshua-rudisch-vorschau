@@ -779,16 +779,22 @@
     try {
       var r = await api("/dashboard-chat", {method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify({messages: messages, finalize:true})});
       var j = await r.json();
-      var aend = (j.ok && j.request && Array.isArray(j.request.aenderungen)) ? j.request.aenderungen : [];
-      if (aend.length){
-        letzterRequest = j.request;
-        var liste = aend.map(function(a){ return "• " + a.bereich + ": " + a.wunsch; });
-        document.getElementById("beauftragen-text").innerHTML = "<b>Das würde ich für dich ändern:</b><br>" +
-          liste.map(function(z){ return z.replace(/</g,"&lt;"); }).join("<br>");
-        beauftragenBox.classList.add("an");
-        verlauf.scrollTop = verlauf.scrollHeight;
+      if (!j.ok){
+        // Finalize-Fehler (z. B. Zusammenfassung nicht lesbar) — NICHT als „keine Änderung“ ausgeben,
+        // sonst geht ein klarer Wunsch stumm verloren.
+        bubble("assistant", "Das Zusammenfassen hat gerade nicht geklappt — magst du gleich noch einmal auf „Änderung beauftragen“ tippen? Zur Not sind wir unter info@lechcode.de für dich da.");
       } else {
-        bubble("assistant", "Ich hab gerade keine konkrete Änderung erkannt — beschreib mir kurz, was genau ich ändern soll (z. B. „Öffnungszeiten im Footer auf Mo–Fr 9–18 Uhr“), dann nehme ich es für dich auf.");
+        var aend = (j.request && Array.isArray(j.request.aenderungen)) ? j.request.aenderungen : [];
+        if (aend.length){
+          letzterRequest = j.request;
+          var liste = aend.map(function(a){ return "• " + a.bereich + ": " + a.wunsch; });
+          document.getElementById("beauftragen-text").innerHTML = "<b>Das würde ich für dich ändern:</b><br>" +
+            liste.map(function(z){ return z.replace(/</g,"&lt;"); }).join("<br>");
+          beauftragenBox.classList.add("an");
+          verlauf.scrollTop = verlauf.scrollHeight;
+        } else {
+          bubble("assistant", "Ich hab gerade keine konkrete Änderung erkannt — beschreib mir kurz, was genau ich ändern soll (z. B. „Öffnungszeiten im Footer auf Mo–Fr 9–18 Uhr“), dann nehme ich es für dich auf.");
+        }
       }
     } catch(e){
       bubble("assistant", "Das hat gerade nicht geklappt — magst du es gleich noch einmal versuchen?");
